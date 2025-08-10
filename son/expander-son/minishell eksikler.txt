@@ -1,0 +1,82 @@
+lexer farklar
+------
+!çift tırnak içindekiler parçalanmaz
+!çift tırnak içindeki pipe redir falan algılanmaz
+!kaçış karakterleri düzenlendi
+!kaçış karakterinden sonraki expand edilmez
+!tırnak kapatma kontrolü güncellendi
+
+
+
+heredoc sinyal eksik
+heredoc içi içe açıldığında keyword'E GÖRE AŞAMA AŞAMA ÇIKMALI, SİNYALE GÖRE DE AŞAMA AŞAMA HATA BASTIRARAK çıkmalı
+
+$?
+
+$_ -> en son çaıştırılan komutun son argümanını tutar, pipelılarda güncellenmeyecek
+
+minishell> cat << end << delim << eof
+> asd
+> end
+> asd
+> delim
+> asd
+> eof
+> asd
+> end
+> asd
+> delim
+> asd
+> end
+asd
+
+minishell> ls | cat << asd
+> a.out
+> a.txt
+> b.txt
+> builtins.c
+> execve left: Success
+builtins.o
+> c.txt
+> file
+> g
+> gnl
+> libft
+> Makefile
+> minishell
+> minishell.c
+> minishell.h
+> minishell.o
+> parser.c
+> parser.o
+> post_order.c
+> post_order.o
+> sjsj
+> tmp
+> v
+> a.out
+a.txt
+b.txt
+builtins.c
+builtins.o
+c.txt
+file
+g
+gnl
+libft
+Makefile
+minishell
+minishell.c
+minishell.h
+minishell.o
+parser.c
+parser.o
+post_order.c
+post_order.o
+sjsj
+tmp
+v
+execve right: Inappropriate ioctl for device
+
+-echo < 123 < 456 hi | echo 42
+ls > sa < as > zoet
